@@ -1,2 +1,3 @@
 Team16
-Lizandro Vivanco
+Lizandro Vivanco Casamona
+Aghogho Esuoma Monorien
