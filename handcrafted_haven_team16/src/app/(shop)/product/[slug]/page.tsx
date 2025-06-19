@@ -1,7 +1,11 @@
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
-import { QuantitySelector, SizeSelector } from "@/components";
+import {
+  ProductMobileSlideshow,
+  QuantitySelector,
+  SizeSelector,
+} from "@/components";
 import { ProductSlideshow } from "../../../../components/product/slideShow/ProductSlideshow";
 
 interface Props {
@@ -22,9 +26,17 @@ export default function Admin({ params }: Props) {
     <div className="grid gap-3 mt-5 mb-20 md:grid-cols-3">
       {/* Slide Show */}
       <div className="col-span-1 md:col-span-2">
+        {/* Mobile */}
+        <ProductMobileSlideshow
+          title={product.title}
+          images={product.images}
+          className="block md:hidden"
+        ></ProductMobileSlideshow>
+        {/* Desktop */}
         <ProductSlideshow
           title={product.title}
           images={product.images}
+          className="hidden md:block"
         ></ProductSlideshow>
       </div>
       {/* Details */}
