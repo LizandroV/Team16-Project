@@ -5,15 +5,8 @@ import { notFound } from "next/navigation";
 
 const seedProducts = initialData.products;
 
-interface Props {
-  params: {
-    id: Category;
-  };
-}
-
-export default async function Admin({ params }: Props) {
-  const { id } = params;
-  const products = seedProducts.filter((product) => product.gender === id);
+export default async function Admin({ params }: { params: { id: string } }) {
+  const id = params.id as Category;
 
   const labels: Record<Category, string> = {
     men: "Mens",
@@ -21,13 +14,13 @@ export default async function Admin({ params }: Props) {
     kid: "Kids",
     unisex: "All",
   };
-  // if (id === "kids") {
-  //   notFound();
-  // }
 
   if (!labels[id]) {
     notFound();
   }
+
+  const products = seedProducts.filter((product) => product.gender === id);
+
   return (
     <>
       <Title
@@ -35,7 +28,6 @@ export default async function Admin({ params }: Props) {
         subtitle="Welcome to our store"
         className="mb-2"
       />
-
       <ProductGrid products={products} />
     </>
   );
