@@ -31,7 +31,7 @@ export default async function Admin({ params }: Props) {
   return (
     <>
       <Title
-        title={`Articles for ${(labels as any)[id]}`}
+        title={`Articles for ${labels[id]}`}
         subtitle="Welcome to our store"
         className="mb-2"
       />
