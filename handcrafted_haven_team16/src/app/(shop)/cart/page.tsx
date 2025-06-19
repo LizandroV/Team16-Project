@@ -3,7 +3,6 @@ import { Title } from "../../../components/ui/title/Title";
 import { initialData } from "@/seed/seed";
 import Image from "next/image";
 import { QuantitySelector } from "../../../components/product/quantity-selector/QuantitySelector";
-// import { redirect } from "next/navigation";
 
 const productsInCart = [
   initialData.products[0],
@@ -11,8 +10,6 @@ const productsInCart = [
   initialData.products[2],
 ];
 export default function Admin() {
-  // redirect("/empty");
-
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px]">
